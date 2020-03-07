@@ -1,7 +1,8 @@
-package com.example.demo;
+package com.example.demo.security;
 
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
@@ -13,6 +14,10 @@ public class CustomUserDetails implements UserDetails {
     private String password;
     private boolean enabled;
     private Collection<? extends GrantedAuthority> authorities;
+
+    public void setAuthority(String ... authority){
+        this.authorities = AuthorityUtils.createAuthorityList(authority);
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

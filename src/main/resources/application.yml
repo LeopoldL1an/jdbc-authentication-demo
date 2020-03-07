@@ -13,3 +13,7 @@ spring:
     cache:
       cachecontrol:
         no-cache: on
+server:
+  servlet:
+    session:
+      timeout: 30m # default
