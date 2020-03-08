@@ -22,7 +22,6 @@ import java.util.Map;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-//@Profile("https")
 // audit 审计
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private static final Logger logger = LoggerFactory.getLogger(SecurityConfiguration.class);
@@ -43,9 +42,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/user/**")
-                .hasRole("USER")
+                .hasAuthority("USER")
                 .antMatchers("/admin/**")
-                .hasRole("ADMIN")
+                .hasAuthority("ADMIN")
                 .anyRequest()
                 .authenticated()
 
