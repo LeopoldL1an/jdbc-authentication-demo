@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8080/test",
+			"name": "http://localhost:8080/anything",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -20,7 +20,8 @@
 					"path": [
 						"test"
 					]
-				}
+				},
+				"description": "随便访问一个借口当被拦截"
 			},
 			"response": []
 		},
@@ -30,7 +31,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/login?username=user&password=123",
+					"raw": "http://localhost:8080/login?username=user&password=111",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -46,27 +47,199 @@
 						},
 						{
 							"key": "password",
-							"value": "123"
+							"value": "111"
 						}
 					]
-				}
+				},
+				"description": "user登录"
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/test",
+			"name": "http://localhost:8080/login?username=admin&password=222",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/test",
+					"raw": "http://localhost:8080/login?username=admin&password=222",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"test"
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "admin"
+						},
+						{
+							"key": "password",
+							"value": "222"
+						}
+					]
+				},
+				"description": "admin登录"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/test/principal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/test/principal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test",
+						"principal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/test/authentication",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/test/authentication",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test",
+						"authentication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/test/holder",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/test/holder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test",
+						"holder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/test/request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/test/request",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test",
+						"request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/method/userRole",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/method/userRole",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"method",
+						"userRole"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/method/adminRole",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/method/adminRole",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"method",
+						"adminRole"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/method/userAuthority",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/method/userAuthority",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"method",
+						"userAuthority"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/method/adminAuthority",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/method/adminAuthority",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"method",
+						"adminAuthority"
 					]
 				}
 			},
@@ -86,25 +259,6 @@
 					"port": "8080",
 					"path": [
 						"logout"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8080/test",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/test",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"test"
 					]
 				}
 			},
